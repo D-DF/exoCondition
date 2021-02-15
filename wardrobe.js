@@ -3,17 +3,18 @@
 
 
 let pluie       = true;
+let soleil      = false;
 let temperature = 3;
 let vetement    = '';
 
-if  (pluie && temperature < 5) {
-  vetement += "parapluie, t shirt, pantalon, calecon, chaussette, botte, pull, manteau, gants"
-} else if (!pluie && temperature < 10) {
-  vetement += "t shirt, pantalon, calecon, chaussette, botte, pull, manteau, gants"
-} else if (temperature < 11 && temperature <= 20 && !pluie) {
-  vetement += "Calecon, chaussette, basket, pantalon, pull, manteau"
+if  (pluie && temperature < 5 && soleil) {
+  vetement += "parapluie, t shirt, pantalon, calecon, chaussette, botte, pull, manteau, gants";
+} else if (!pluie && temperature < 10 && soleil) {
+  vetement += "t shirt, pantalon, calecon, chaussette, botte, pull, manteau, gants";
+} else if (temperature < 11 && temperature <= 20 && !pluie || !soleil) {
+  vetement += "Calecon, chaussette, basket, pantalon, pull, manteau, lunette de soleil";
 } else {
-  vetement += "Calecon, claquette, chaussette, t shirt"
+  vetement += "Calecon, claquette, chaussette, t shirt, lunette de soleil";
 }
   
 console.log(`Je vous recommande de porter : ${vetement}`);
